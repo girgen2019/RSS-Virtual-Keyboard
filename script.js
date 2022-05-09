@@ -16,7 +16,7 @@ function init(){
         if(i === 12 || i === 23 || i === 33){
             out += '<div class= "clearfix"></div>'
         }
-        out += '<div class = "buttons" data ="'+ keyboard[i] +'">'+String.fromCharCode(keyboard[i])+'</div>';
+        out += '<div class = "k-key" data ="'+ keyboard[i] +'">'+String.fromCharCode(keyboard[i])+'</div>';
         
     } 
     
@@ -29,17 +29,17 @@ let display = document.querySelector('.display');
 
 document.onkeypress = function(event){
     
-  document.querySelectorAll('#keyboard .buttons').forEach(function(element){
+  document.querySelectorAll('#keyboard .k-key').forEach(function(element){
         element.classList.remove('active');
     })
-    document.querySelector('#keyboard .buttons[data = "'+event.keyCode +'"] ').classList.add('active')
+    document.querySelector('#keyboard .k-key[data = "'+event.keyCode +'"] ').classList.add('active')
     display.textContent += event.key
    
 }
 
-document.querySelectorAll('#keyboard .buttons').forEach(function(element){
+document.querySelectorAll('#keyboard .k-key').forEach(function(element){
     element.onclick = function(event){
-        document.querySelectorAll('#keyboard .buttons').forEach(function(element){
+        document.querySelectorAll('#keyboard .k-key').forEach(function(element){
         element.classList.remove('active');    
     })
 let code = this.getAttribute('data') ;
