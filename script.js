@@ -14,7 +14,7 @@ function init(){
     let out = '';
     for(let i = 0; i < keyboard.length; i++){
         if(i === 12 || i === 23 || i === 33){
-            out += '<div class= "clearfix"></div>'
+            out += '<div class= "clearfix"></div>';
         }
         out += '<div class = "k-key" data ="'+ keyboard[i] +'">'+String.fromCharCode(keyboard[i])+'</div>';
         
@@ -32,8 +32,8 @@ document.onkeypress = function(event){
   document.querySelectorAll('#keyboard .k-key').forEach(function(element){
         element.classList.remove('active');
     });
-    document.querySelector('#keyboard .k-key[data = "'+event.keyCode +'"] ').classList.add('active')
-    display.textContent += event.key
+    document.querySelector('#keyboard .k-key[data = "'+event.keyCode +'"] ').classList.add('active');
+    display.textContent += event.key;
    
 }
 
