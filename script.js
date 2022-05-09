@@ -32,8 +32,7 @@ document.onkeypress = function(event){
   document.querySelectorAll('#keyboard .k-key').forEach(function(element){
         element.classList.remove('active');
     });
-   let active = document.querySelector('#keyboard .k-key[data = "'+event.keyCode +'"]');
-   active.classList.add('active');
+   document.querySelector('#keyboard .k-key[data = "'+event.keyCode +'"]').classList.add('active');;
     display.textContent += event.key;
    
 }
